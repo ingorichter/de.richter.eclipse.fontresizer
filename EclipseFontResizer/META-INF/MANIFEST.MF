@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FontSizer
+Bundle-SymbolicName: EclipseFontResizer;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.richter.eclipse.fontresizer.Activator
+Bundle-Vendor: de.richter.tools
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
