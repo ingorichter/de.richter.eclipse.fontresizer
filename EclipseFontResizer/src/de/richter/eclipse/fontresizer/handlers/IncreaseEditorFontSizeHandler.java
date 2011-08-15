@@ -19,8 +19,9 @@ package de.richter.eclipse.fontresizer.handlers;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 
 public class IncreaseEditorFontSizeHandler extends AbstractHandler {
 	/**
@@ -34,21 +35,12 @@ public class IncreaseEditorFontSizeHandler extends AbstractHandler {
 	 * from the application context.
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IEclipsePreferences node = InstanceScope.INSTANCE
-				.getNode("org.eclipse.ui.workbench");
-		String string = node.get("org.eclipse.jdt.ui.editors.textfont",
-				"1|Monaco|12.0|0|COCOA|1|Monaco");
+		final Font font = JFaceResources.getFontRegistry().get("org.eclipse.jdt.ui.editors.textfont");
+		
+		final FontData[] newFontData = font.getFontData();
+		newFontData[0].setHeight(newFontData[0].getHeight() + 1);
 
-		String[] segments = string.split("\\|");
-		float fontSize = Float.parseFloat(segments[2]);
-		fontSize += 1.0;
-
-		String newFontSize = String.format("%s|%s|%.1f|%s|%s|%s|%s",
-				segments[0], segments[1], fontSize, segments[3], segments[4],
-				segments[5], segments[6]);
-
-		node.put("org.eclipse.jdt.ui.editors.textfont", newFontSize);
-		// "1|Monaco|48.0|0|COCOA|1|Monaco");
+		JFaceResources.getFontRegistry().put("org.eclipse.jdt.ui.editors.textfont", newFontData);
 
 		return null;
 	}
