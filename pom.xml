@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.richter.tools</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>EclipseFontResizer</module>
+        <module>EclipseFontResizerFeature</module>
+        <module>EclipseFontResizerTest</module>
+        <module>EclipseFontResizerP2UpdateSite</module>
+    </modules>
+    <developers>
+        <developer>
+            <id>ingorichter</id>
+            <name>Ingo</name>
+            <email>ingo.richter+github@gmail.com</email>
+            <url>http://ingorichter.blogspot.com</url>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>-8</timezone>
+            <properties>
+                <picUrl>http://goo.gl/NVrEw</picUrl>
+            </properties>
+        </developer>
+    </developers>
+    <properties>
+        <tycho-version>0.16.0</tycho-version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>juno</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/releases/juno</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
