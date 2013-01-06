@@ -2,20 +2,35 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="de.richter.eclipse.fontresizer.startup.FontResizerStartup">
+      </startup>
+   </extension>
+   <extension
          point="org.eclipse.ui.commands">
       <category
+            description="Editor font resizer shortcuts"
             id="FontSizer.commands.category"
             name="Font Resizer">
       </category>
       <command
             categoryId="FontSizer.commands.category"
+            description="Increase the text editor font size"
             id="FontSizer.commands.increaseFontSizeCommand"
             name="Increase Editor Font">
       </command>
       <command
             categoryId="FontSizer.commands.category"
+            description="Decrease the text editor font size"
             id="FontSizer.commands.decreaseFontSizeCommand"
             name="Decrease Editor Font Size">
+      </command>
+      <command
+            categoryId="FontSizer.commands.category"
+            description="Reset the text editor font size"
+            id="FontSizer.commands.resetFontSizeCommand"
+            name="Reset Editor Font Size">
       </command>
    </extension>
    <extension
@@ -27,6 +42,10 @@
       <handler
             class="de.richter.eclipse.fontresizer.handlers.DecreaseEditorFontSizeHandler"
             commandId="FontSizer.commands.decreaseFontSizeCommand">
+      </handler>
+      <handler
+            class="de.richter.eclipse.fontresizer.handlers.ResetEditorFontSizeHandler"
+            commandId="FontSizer.commands.resetFontSizeCommand">
       </handler>
    </extension>
    <extension
@@ -42,6 +61,12 @@
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="CTRL+NUMPAD_SUBTRACT">
+      </key>
+      <key
+            commandId="FontSizer.commands.resetFontSizeCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+NUMPAD_EQUAL">
       </key>
    </extension>
    <extension
@@ -62,17 +87,29 @@
                   id="FontSizer.menus.decreaseFontSizeCommand"
                   mnemonic="T">
             </command>
+            <command
+                  commandId="FontSizer.commands.resetFontSizeCommand"
+                  id="FontSizer.menus.resetFontSizeCommand"
+                  mnemonic="R"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
       <menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
-               id="FontSizer.toolbars.sampleToolbar">
+               id="FontSizer.toolbars.FontSizerToolbar">
             <command
                   commandId="FontSizer.commands.increaseFontSizeCommand"
-                  icon="icons/sample.gif"
-                  id="FontSizer.toolbars.sampleCommand"
-                  tooltip="Say hello world">
+                  icon="icons/full/elcl16/magnify_font.gif"
+                  id="FontSizer.toolbars.increaseFontSizeCommand"
+                  tooltip="Increase editor font size">
+            </command>
+            <command
+                  commandId="FontSizer.commands.decreaseFontSizeCommand"
+                  icon="icons/full/elcl16/reduce_font.gif"
+                  id="FontSizer.toolbars.decreaseFontSizeCommand"
+                  tooltip="Decrease editor font size">
             </command>
          </toolbar>
       </menuContribution>

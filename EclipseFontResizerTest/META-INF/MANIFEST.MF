@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EclipseFontResizerTest
-Bundle-SymbolicName: EclipseFontResizerTest
+Bundle-SymbolicName: de.richter.tools.eclipse.fontresizer.test
 Bundle-Version: 1.0.0.qualifier
-Fragment-Host: EclipseFontResizer;bundle-version="1.0.0"
+Fragment-Host: de.richter.tools.eclipse.fontresizer;bundle-version="0.0.1.qualifier"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.junit
+Require-Bundle: org.junit4;bundle-version="4.8.1"
