@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/de.richter.tools.fontresizer.feature_1.0.0.qualifier.jar" id="de.richter.tools.fontresizer.feature" version="1.0.0.qualifier">
+   <feature url="features/de.richter.tools.eclipse.fontresizer.feature_1.0.0.qualifier.jar" id="de.richter.tools.eclipse.fontresizer.feature" version="1.0.0.qualifier">
       <category name="ResizeEditorFonts"/>
    </feature>
    <category-def name="ResizeEditorFonts" label="Resize editor fonts">

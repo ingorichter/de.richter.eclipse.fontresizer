@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.richter.tools.fontresizer.feature"
+      id="de.richter.tools.eclipse.fontresizer.feature"
       label="Eclipse Font Resizer"
       version="1.0.0.qualifier"
       provider-name="Ingo Richter">
