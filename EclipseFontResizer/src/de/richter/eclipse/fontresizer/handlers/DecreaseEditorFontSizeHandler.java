@@ -19,28 +19,14 @@ package de.richter.eclipse.fontresizer.handlers;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.jface.resource.JFaceResources;
-import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.graphics.FontData;
 
 public class DecreaseEditorFontSizeHandler extends AbstractHandler {
 	/**
-	 * The constructor.
-	 */
-	public DecreaseEditorFontSizeHandler() {
-	}
-
-	/**
-	 * the command has been executed, so extract extract the needed information
+	 * the command has been executed, so extract the needed information
 	 * from the application context.
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final Font font = JFaceResources.getFontRegistry().get("org.eclipse.jdt.ui.editors.textfont");
-		
-		final FontData[] newFontData = font.getFontData();
-		newFontData[0].setHeight(newFontData[0].getHeight() - 1);
-
-		JFaceResources.getFontRegistry().put("org.eclipse.jdt.ui.editors.textfont", newFontData);
+		FontSizingManager.decreaseFontSize();
 
 		return null;
 	}
