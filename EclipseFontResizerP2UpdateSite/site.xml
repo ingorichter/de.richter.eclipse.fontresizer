@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.richter.tools.fontresizer.feature_1.0.0.qualifier.jar" id="de.richter.tools.fontresizer.feature" version="1.0.0.qualifier">
+      <category name="ResizeEditorFonts"/>
+   </feature>
+   <category-def name="ResizeEditorFonts" label="Resize editor fonts">
+      <description>
+         Add shortcuts and mousewheel support to resize the font of the text editor in use.
+      </description>
+   </category-def>
+</site>
